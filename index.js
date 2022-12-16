@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -86,3 +86,19 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+//Count the total number of months included in the dataset. 
+let numberMonths = finances.length 
+console.log(numberMonths)
+
+//Calculate the net total amount of Profit/Loss
+for (let i = 0; i < finances.length; i++) {
+    
+    let monthlyProfit = Number(finances[i].filter(x => !isNaN(x))); 
+    console.log(monthlyProfit)
+
+
+    
+    console.log(typeof monthlyProfit); 
+
+}
