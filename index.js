@@ -92,13 +92,14 @@ let numberMonths = finances.length
 console.log(numberMonths)
 
 //Calculate the net total amount of Profit/Loss
+let sum = 0
 for (let i = 0; i < finances.length; i++) {
     
     let monthlyProfit = Number(finances[i].filter(x => !isNaN(x))); 
-    console.log(monthlyProfit)
-
-
-    
-    console.log(typeof monthlyProfit); 
+//    console.log(monthlyProfit)
+//    console.log(typeof monthlyProfit); 
+    sum = sum + monthlyProfit
+//    console.log(sum)
 
 }
+console.log(sum)
