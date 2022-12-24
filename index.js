@@ -106,19 +106,27 @@ console.log(sum)
 
 //Calculate the average of the changes in Profit/Losses over the entire period.
 let totalChange = 0
+//console.log(finances[0][1])
 for (let i = 0; i < finances.length; i++) {
+    let startValue = finances[i][1]
+    //let endValue = finances[i+1][1]
 
-    let startValue = Number(finances[i].filter(x => !isNaN(x))); 
-    let endValue = Number(finances[i+1].filter(x => !isNaN(x))); 
-//    console.log(startValue)
+
 //    console.log(endValue)
-    
-    let monthlyChange = endValue - startValue
-//    console.log(monthlyChange)
-    totalChange = totalChange + monthlyChange
-//    console.log(totalChange)
+//    console.log(typeof endValue)
+//    console.log(startValue)
 
+    //    let startValue = finances[i]
+//    console.log(startValue)
+    
+//    let monthlyChange = Math.abs(endValue - startValue)
+    //let monthlyChange = endValue - startValue
+    //console.log(monthlyChange)
+
+    //totalChange = totalChange + monthlyChange
+    //console.log(totalChange)
 }
-//console.log(totalChange)
-let averageChange = totalChange / numberMonths
-//console.log(averageChange)
+
+console.log(totalChange)
+let averageChange = totalChange / 
+console.log (averageChange)
