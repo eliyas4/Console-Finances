@@ -129,8 +129,8 @@ let numMonths = months.length
 //console.log(numMonths)
 //console.log(totalChange)
 let averageChange = totalChange / (numMonths)
-let averageChangeRounded = averageChange.toFixed(2)
-console.log(averageChangeRounded) 
+//let averageChangeRounded = averageChange.toFixed(2)
+console.log(averageChange.toFixed(2)) 
 
 //Find the greatest increase in profits (date and amount) over the entire period.
 let monthlyChange = []
@@ -140,4 +140,4 @@ for (let i = 1; i < finances.length; i++) {
     monthlyChange.push(endValue - startValue)  
 
 }
-console.log(monthlyChange)
+//console.log(monthlyChange)
