@@ -93,51 +93,44 @@ console.log(numberMonths)
 
 //Calculate the net total amount of Profit/Loss
 let sum = 0
-for (let i = 0; i < finances.length; i++) {
-    
+for (let i = 0; i < finances.length; i++) { 
     let monthlyProfit = Number(finances[i].filter(x => !isNaN(x))); 
-//    console.log(monthlyProfit)
-//    console.log(typeof monthlyProfit); 
     sum = sum + monthlyProfit
-//    console.log(sum)
-
 }
 console.log(sum)
 
 //Calculate the average of the changes in Profit/Losses over the entire period.
 let totalChange = 0
 let months = []
-//console.log(finances[0][1])
 for (let i = 1; i < finances.length; i++) {
     let startValue = finances[i-1][1]
     let endValue = finances[i][1]
+
     months.push(i)
-//    console.log(months)
-//    console.log(endValue)
-//    console.log(typeof endValue)
-//    console.log(startValue)
 
-    
-//    let monthlyChange = Math.abs(endValue - startValue)
     let monthlyChange = endValue - startValue
-    //console.log(monthlyChange)
-
     totalChange = totalChange + monthlyChange
-    //console.log(totalChange)
 }
 let numMonths = months.length
-//console.log(numMonths)
-//console.log(totalChange)
 let averageChange = totalChange / (numMonths)
-//let averageChangeRounded = averageChange.toFixed(2)
 console.log(averageChange.toFixed(2)) 
 
-//Find the greatest increase in profits (date and amount) over the entire period.
+//Find the greatest increase in profits and losses (date and amount) over the entire period.
 let monthlyChange = []
+let monthlyChangeArray = []
 for (let i = 1; i < finances.length; i++) {
-    let startValue = finances[i-1][1]
-    let endValue = finances[i][1]
-    monthlyChange.push(endValue - startValue)  
+    startValue = finances[i-1][1]
+    endValue = finances[i][1]
 
+    monthlyChangeArray.push([finances[i][0], endValue - startValue]) 
+    monthlyChange.push(endValue - startValue) 
+
+    maximumProfit = Math.max(...monthlyChange)
+    minimumProfit = Math.min(...monthlyChange) 
 }
-//console.log(monthlyChange)
+let highestProfitChange = monthlyChange.indexOf(maximumProfit)
+let lowestProfitChange = monthlyChange.indexOf(minimumProfit)
+
+console.log(monthlyChangeArray[highestProfitChange])
+console.log(monthlyChangeArray[lowestProfitChange])
+
