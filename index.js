@@ -1,4 +1,8 @@
-let finances = [
+main();
+
+
+function main () {
+    let finances =  [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
 ['Mar-2010', 322013],
@@ -84,53 +88,74 @@ let finances = [
 ['Nov-2016', 795914],
 ['Dec-2016', 60988],
 ['Jan-2017', 138230],
-['Feb-2017', 671099]
+['Feb-2017', 671099],
 ];
+let avgResult=0;
+console.log("Financial Analysis")
+console.log("----------------")
+numOfMonths (finances);
+netProfit (finances);
+avgChange (avgResult, finances);
+lossPnL (finances);
+alert ();
+}
 
 //Count the total number of months included in the dataset. 
-let numberMonths = finances.length 
-console.log(numberMonths)
+function numOfMonths (inArr) {
+    let numberMonths = inArr.length 
+    console.log("Number of Months:", numberMonths)
+}
 
 //Calculate the net total amount of Profit/Loss
-let sum = 0
-for (let i = 0; i < finances.length; i++) { 
-    let monthlyProfit = Number(finances[i].filter(x => !isNaN(x))); 
-    sum = sum + monthlyProfit
+function netProfit  (inArr) {
+    let sum = 0
+    for (let i = 0; i < inArr.length; i++) { 
+       let monthlyProfit = Number(inArr[i].filter(x => !isNaN(x))); 
+      sum = sum + monthlyProfit
+    }
+    console.log("Total Profit:","$" +  sum)
 }
-console.log(sum)
 
 //Calculate the average of the changes in Profit/Losses over the entire period.
-let totalChange = 0
-let months = []
-for (let i = 1; i < finances.length; i++) {
-    let startValue = finances[i-1][1]
-    let endValue = finances[i][1]
+function avgChange  (inResult, inArr) {
+    let totalChange = 0;
+    let months = [];
+    for (let i = 1; i < inArr.length; i++) {
+      let startValue = inArr[i-1][1];
+      let endValue = inArr[i][1];
 
-    months.push(i)
+      months.push(i);
 
-    let monthlyChange = endValue - startValue
-    totalChange = totalChange + monthlyChange
-}
-let numMonths = months.length
-let averageChange = totalChange / (numMonths)
-console.log(averageChange.toFixed(2)) 
+      let monthlyChange = endValue - startValue;
+      totalChange = totalChange + monthlyChange;
+    }
+    let numMonths = months.length;
+    let averageChange = totalChange / (numMonths);
+    inResult = averageChange.toFixed(2);
+    console.log("Average Change:","$" +  averageChange.toFixed(2));
+  }
 
 //Find the greatest increase in profits and losses (date and amount) over the entire period.
-let monthlyChange = []
-let monthlyChangeArray = []
-for (let i = 1; i < finances.length; i++) {
-    startValue = finances[i-1][1]
-    endValue = finances[i][1]
+function lossPnL  (inArr) {
+    let monthlyChange = []
+    let monthlyChangeArray = []
+    for (let i = 1; i < inArr.length; i++) {
+      startValue = inArr[i-1][1]
+      endValue = inArr[i][1]
 
-    monthlyChangeArray.push([finances[i][0], endValue - startValue]) 
-    monthlyChange.push(endValue - startValue) 
+      monthlyChangeArray.push([inArr[i][0], endValue - startValue]) 
+      monthlyChange.push(endValue - startValue) 
 
-    maximumProfit = Math.max(...monthlyChange)
-    minimumProfit = Math.min(...monthlyChange) 
+      maximumProfit = Math.max(...monthlyChange)
+      minimumProfit = Math.min(...monthlyChange) 
+    }
+    let highestProfitChange = monthlyChange.indexOf(maximumProfit)
+    let lowestProfitChange = monthlyChange.indexOf(minimumProfit)
+
+    console.log("Greatest Increase:", monthlyChangeArray[highestProfitChange][0],":","$" + monthlyChangeArray[highestProfitChange][1])
+    console.log("Greatest Decrease:", monthlyChangeArray[lowestProfitChange][0],":","$" + monthlyChangeArray[lowestProfitChange][1])
 }
-let highestProfitChange = monthlyChange.indexOf(maximumProfit)
-let lowestProfitChange = monthlyChange.indexOf(minimumProfit)
 
-console.log(monthlyChangeArray[highestProfitChange])
-console.log(monthlyChangeArray[lowestProfitChange])
+function alert () {
 
+}
