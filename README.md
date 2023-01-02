@@ -1,8 +1,9 @@
-# Unit 4 Challenge: Console Finances
+# Financial Analysis 
 
-## Overview
-
-In this challenge, you'll be using the concepts you've learned to complete the required activity. This activity presents a real-world situation in which your newfound JavaScript skills will come in handy. You are tasked with creating code for analyzing the financial records of a company. You have been provided with a financial dataset in the `starter/index.js` file.
+## Description
+- At the start of the "Challenge 4" project a javascript file containing a small array of months and profits was inherited. The task was to carry out financial analysis on the data to determine: The number of months, The total profit, The average change in profit, The month with the greatest increase in profit, and The month with the greatest decrease in profit.  
+- This type of program could benefit the user as it provides key financial statistics on the dataset originally provided. In addition, the dataset can be changed and the financial statistics will change accordingly. Meaning that the user can specify their own data and receive information about their own data. 
+- Throughout this project I expanded my knowledge of javascript greatly. I worked with for loops  
 
 ## Instructions
 
