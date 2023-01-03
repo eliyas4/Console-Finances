@@ -96,7 +96,6 @@ numOfMonths (finances);
 netProfit (finances);
 avgChange (avgResult, finances);
 lossPnL (finances);
-alert ();
 }
 
 //Count the total number of months included in the dataset. 
