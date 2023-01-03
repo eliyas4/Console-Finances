@@ -113,7 +113,7 @@ function netProfit  (inArr) {
        let monthlyProfit = Number(inArr[i].filter(x => !isNaN(x))); 
       sum = sum + monthlyProfit
     }
-    console.log("Total Profit:","$" +  sum)
+    console.log("Total Profit:","$" + sum)
 }
 
 //Calculate the average of the changes in Profit/Losses over the entire period.

@@ -3,7 +3,7 @@
 ## Description
 - At the start of the "Challenge 4" project a javascript file containing a small array of months and profits was inherited. The task was to carry out financial analysis on the data to determine: The number of months, The total profit, The average change in profit, The month with the greatest increase in profit, and The month with the greatest decrease in profit.  
 - This type of program could benefit the user as it provides key financial statistics on the dataset originally provided. In addition, the dataset can be changed and the financial statistics will change accordingly. Meaning that the user can specify their own data and receive information about their own data. 
-- Throughout this project I expanded my knowledge of javascript greatly. I worked with for loops  
+- Throughout this project I expanded my knowledge of javascript greatly. Working with for loops taught me how to count tallies and manipulate arrays to produce key data, while using if statements let me work in a logical manner to log messages that would be displayed given specific parameters. By far the most valuable take away from this challenge was using learning to use literature when unsure about how to proceed with an obstacle.      
 
 ## Instructions
 
