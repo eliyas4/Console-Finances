@@ -1,6 +1,5 @@
 main();
 
-
 function main () {
     let finances =  [
 ['Jan-2010', 867884],
@@ -156,6 +155,3 @@ function lossPnL  (inArr) {
     console.log("Greatest Decrease:", monthlyChangeArray[lowestProfitChange][0],":","$" + monthlyChangeArray[lowestProfitChange][1])
 }
 
-function alert () {
-
-}
