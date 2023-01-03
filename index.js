@@ -94,7 +94,7 @@ console.log("Financial Analysis")
 console.log("----------------")
 numOfMonths (finances);
 netProfit (finances);
-avgChange (avgResult, finances);
+avgChange (finances);
 lossPnL (finances);
 }
 
@@ -115,7 +115,7 @@ function netProfit  (inArr) {
 }
 
 //Calculate the average of the changes in Profit/Losses over the entire period.
-function avgChange  (inResult, inArr) {
+function avgChange  (inArr) {
     let totalChange = 0;
     let months = [];
     for (let i = 1; i < inArr.length; i++) {
@@ -129,7 +129,6 @@ function avgChange  (inResult, inArr) {
     }
     let numMonths = months.length;
     let averageChange = totalChange / (numMonths);
-    inResult = averageChange.toFixed(2);
     console.log("Average Change:","$" +  averageChange.toFixed(2));
   }
 
@@ -144,13 +143,14 @@ function lossPnL  (inArr) {
       monthlyChangeArray.push([inArr[i][0], endValue - startValue]) 
       monthlyChange.push(endValue - startValue) 
 
-      maximumProfit = Math.max(...monthlyChange)
-      minimumProfit = Math.min(...monthlyChange) 
-    }
-    let highestProfitChange = monthlyChange.indexOf(maximumProfit)
-    let lowestProfitChange = monthlyChange.indexOf(minimumProfit)
+    }   
+    maximumProfit = Math.max(...monthlyChange)
+    minimumProfit = Math.min(...monthlyChange) 
 
-    console.log("Greatest Increase:", monthlyChangeArray[highestProfitChange][0],":","$" + monthlyChangeArray[highestProfitChange][1])
-    console.log("Greatest Decrease:", monthlyChangeArray[lowestProfitChange][0],":","$" + monthlyChangeArray[lowestProfitChange][1])
+    let highestProfitMonth = monthlyChange.indexOf(maximumProfit)
+    let lowestProfitMonth = monthlyChange.indexOf(minimumProfit)
+
+    console.log("Greatest Increase:", monthlyChangeArray[highestProfitMonth][0], ":", "$" + monthlyChangeArray[highestProfitMonth][1])
+    console.log("Greatest Decrease:", monthlyChangeArray[lowestProfitMonth][0], ":", "$" + monthlyChangeArray[lowestProfitMonth][1])
 }
 
